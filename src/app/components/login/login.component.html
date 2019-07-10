@@ -1,0 +1,19 @@
+<p>login works!</p>
+<div  >
+  <label>login</label>
+    <form [formGroup]="loginForm">
+      <div>
+        <input placeholder="Wprowadz adress email" formControlName="email" required>
+      </div>
+
+  <label>Password</label>
+      <div>
+        <input placeholder="Haslo" type= "password" formControlName="password">
+      </div>
+
+      <div>
+        <button (click)="onSubmit()">Login</button>
+      </div>
+
+  </form>
+</div>
