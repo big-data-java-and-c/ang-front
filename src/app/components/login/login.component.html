@@ -1,19 +1,39 @@
-<p>login works!</p>
-<div>
-  <label>login</label>
-    <form [formGroup]="loginForm">
-      <div>
-        <input placeholder="Wprowadz adress email" formControlName="email" required>
-      </div>
+<!-- Default form login -->
+<div style="; display: flex; align-items: center; justify-content: center;">
+  <form class="text-center border border-light p-4" [formGroup]="loginForm">
 
-  <label>Password</label>
-      <div>
-        <input placeholder="Haslo" type= "password" formControlName="password">
-      </div>
+    <p class="h4 mb-4">Login</p>
 
-      <div>
-        <button (click)="onSubmit()">Login</button>
-      </div>
+    <!-- Email -->
+    <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail" formControlName="email" required>
+
+    <!-- Password -->
+    <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password" type="password" formControlName="password">
+    <!-- Sign in button -->
+    <button mdbBtn color="info" block="true" class="my-4" (click)="onSubmit()" >Sign in</button>
+
 
   </form>
 </div>
+
+
+<!-- Default form login -->
+
+<!--<div>-->
+<!--  <label>login</label>-->
+<!--    <form [formGroup]="loginForm">-->
+<!--      <div>-->
+<!--        <input placeholder="Wprowadz adress email" formControlName="email" required>-->
+<!--      </div>-->
+
+<!--  <label>Password</label>-->
+<!--      <div>-->
+<!--        <input placeholder="Haslo" type= "password" formControlName="password">-->
+<!--      </div>-->
+
+<!--      <div>-->
+<!--        <button (click)="onSubmit()">Login</button>-->
+<!--      </div>-->
+
+<!--  </form>-->
+<!--</div>-->
