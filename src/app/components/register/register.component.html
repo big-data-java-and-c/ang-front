@@ -1,1 +1,25 @@
-<p>register works!</p>
+<div style="; display: flex; align-items: center; justify-content: center;">
+  <form class="text-center border border-light p-4" [formGroup]="registerForm">
+
+    <p class="h4 mb-4">Register</p>
+
+    <!-- Email -->
+    <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail" formControlName="email" required>
+
+    <!-- Password -->
+    <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password" type="password" formControlName="password">
+
+    <input type="email" id="defaultDisplayName" class="form-control mb-4" placeholder="Display name" formControlName="displayName" required>
+
+    <label for="role">Role</label>
+    <select class="form-control" id="role" formControlName="role" required>
+      <option *ngFor="let role of roles" [value]="role">{{role}}</option>
+    </select>
+
+
+    <!-- Sign in button -->
+    <button mdbBtn color="info" block="true" class="my-4" (click)="onSubmit()" >Sign in</button>
+
+
+  </form>
+</div>

@@ -10,6 +10,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TokenStorage } from 'src/app/helpers/token.storage';
 import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MDBBootstrapModule} from 'angular-bootstrap-md';
 
 
 
@@ -26,8 +28,10 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    MDBBootstrapModule.forRoot(),
     HttpClientModule,
     ToastrModule.forRoot(),
+    BrowserAnimationsModule,
   ],
   providers: [    TokenStorage  ],
   bootstrap: [AppComponent]
