@@ -12,6 +12,8 @@ import { TokenStorage } from 'src/app/helpers/token.storage';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MDBBootstrapModule} from 'angular-bootstrap-md';
+import { GroupsListComponent } from './components/groups-list/groups-list.component';
+import { StudentsListInGroupComponent } from './components/students-list-in-group/students-list-in-group.component';
 
 
 
@@ -21,7 +23,9 @@ import { MDBBootstrapModule} from 'angular-bootstrap-md';
     AppComponent,
     TopBarComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    GroupsListComponent,
+    StudentsListInGroupComponent
   ],
   imports: [
     BrowserModule,
