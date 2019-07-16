@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
-import { HttpClient,HttpHeaders } from '@angular/common/http';
-import { User } from './../models/user';
-import { environment } from './../../environments/environment';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {User} from './../models/user';
+import {environment} from './../../environments/environment';
 
 
 @Injectable({
@@ -10,7 +10,8 @@ import { environment } from './../../environments/environment';
 })
 export class UserService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   register(user: User) {
     return this.http.post(`${environment.backendUrl}/api/auth/signup`, user);
