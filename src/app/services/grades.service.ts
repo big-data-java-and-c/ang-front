@@ -11,8 +11,10 @@ import { environment } from './../../environments/environment';
 export class GradesService {
 
   constructor(private http: HttpClient) { }
-
-  getGrades(): Observable<number[]> {
-    return this.http.get<number[]>(`${environment.backendUrl}/api/grade/grades/1/student/1`);
+  userId: number;
+  getGrades(id: number): Observable<number[]> {
+    console.log("userId -> ");
+   console.log(sessionStorage.getItem('userId'));
+    return this.http.get<number[]>(`${environment.backendUrl}/api/grade/grades/${id}/student/${sessionStorage.getItem('userId')}`);
   }
 }

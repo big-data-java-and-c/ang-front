@@ -15,8 +15,8 @@ export class GradesComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.grades = this.gradesService.getGrades().toPromise().then().catch();
-    console.log(this.id);
+    this.gradesService.getGrades(this.id).subscribe(data => this.grades = data);
+    console.log(this.grades);
   }
 
 }
