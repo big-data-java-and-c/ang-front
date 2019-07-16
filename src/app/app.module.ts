@@ -12,8 +12,11 @@ import { TokenStorage } from 'src/app/helpers/token.storage';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MDBBootstrapModule} from 'angular-bootstrap-md';
+import { SubjectListComponent } from './components/subject-list/subject-list.component';
+import { GradesComponent } from './components/grades/grades.component';
 import { GroupsListComponent } from './components/groups-list/groups-list.component';
 import { StudentsListInGroupComponent } from './components/students-list-in-group/students-list-in-group.component';
+
 
 
 
@@ -24,6 +27,8 @@ import { StudentsListInGroupComponent } from './components/students-list-in-grou
     TopBarComponent,
     LoginComponent,
     RegisterComponent,
+    SubjectListComponent,
+    GradesComponent
     GroupsListComponent,
     StudentsListInGroupComponent
   ],
