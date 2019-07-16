@@ -1,24 +1,30 @@
-<h3>Gtupa: tu bedzie nazwa grupy jak to dodam</h3>
+<h3>Grupa: {{group.name_grupy}}</h3>
 
 <table class="table">
   <thead class="thead-dark">
   <tr>
-    <th  scope="col">Nr indeksu</th>
-    <th  scope="col">Imie</th>
-    <th  scope="col">Nazwisko</th>
+    <th  scope="col">Nazwa</th>
+    <th  scope="col">Adres</th>
+    <th  scope="col">Miasto</th>
+    <th  scope="col">Kod pocztowy</th>
+    <th  scope="col">Numer telefonu </th>
   </tr>
   </thead>
 
-<!--  <tr *ngFor="let group of groups">-->
+  <tr *ngFor="let student of students">
 
-<!--    <th *ngIf="group.name_grupy, else elseBlock"><a [routerLink]="['group/' + group.id_group]">{{group.name_grupy}}</a></th>-->
+    <th *ngIf="student.displayName, else elseBlock">{{student.displayName}}</th>
+    <th *ngIf="student.address, else elseBlock">{{student.address}}</th>
+    <th *ngIf="student.city, else elseBlock">{{student.city}}</th>
+    <th *ngIf="student.zip_code, else elseBlock">{{student.zip_code}}</th>
+    <th *ngIf="student.phone_number, else elseBlock">{{student.phone_number}}</th>
 
-<!--    <ng-template #elseBlock>-->
-<!--      <th>NO DATA</th>-->
-<!--    </ng-template>-->
-<!--    &lt;!&ndash;      <ng-template #elseNameBlock><th><a [routerLink]="['accountDetails/' + account.id]" >NO DATA</a></th></ng-template>&ndash;&gt;-->
+    <ng-template #elseBlock>
+      <th>NO DATA</th>
+    </ng-template>
+    <!--      <ng-template #elseNameBlock><th><a [routerLink]="['accountDetails/' + account.id]" >NO DATA</a></th></ng-template>-->
 
 
-<!--  </tr>-->
+  </tr>
 
 </table>

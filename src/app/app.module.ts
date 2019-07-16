@@ -28,7 +28,7 @@ import { StudentsListInGroupComponent } from './components/students-list-in-grou
     LoginComponent,
     RegisterComponent,
     SubjectListComponent,
-    GradesComponent
+    GradesComponent,
     GroupsListComponent,
     StudentsListInGroupComponent
   ],

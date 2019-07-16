@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: RegisterComponent },
   { path: 'subjectlist', component: SubjectListComponent },
-  { path: 'grades/:id', component: GradesComponent }
+  { path: 'grades/:id', component: GradesComponent },
   { path: 'groupsList', component: GroupsListComponent },
   { path: 'groupsList/group/:id', component: StudentsListInGroupComponent },
 
