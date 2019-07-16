@@ -1,0 +1,22 @@
+<div >
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th  scope="col">Grupa</th>
+    </tr>
+    </thead>
+
+    <tr *ngFor="let group of groups">
+
+      <th *ngIf="group.name_grupy, else elseBlock"><a [routerLink]="['group/' + group.id_group]">{{group.name_grupy}}</a></th>
+
+      <ng-template #elseBlock>
+        <th>NO DATA</th>
+      </ng-template>
+      <!--      <ng-template #elseNameBlock><th><a [routerLink]="['accountDetails/' + account.id]" >NO DATA</a></th></ng-template>-->
+
+
+    </tr>
+
+  </table>
+</div>
