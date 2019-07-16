@@ -14,6 +14,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MDBBootstrapModule} from 'angular-bootstrap-md';
 import { SubjectListComponent } from './components/subject-list/subject-list.component';
 import { GradesComponent } from './components/grades/grades.component';
+import { GroupsListComponent } from './components/groups-list/groups-list.component';
+import { StudentsListInGroupComponent } from './components/students-list-in-group/students-list-in-group.component';
+
 
 
 
@@ -26,6 +29,8 @@ import { GradesComponent } from './components/grades/grades.component';
     RegisterComponent,
     SubjectListComponent,
     GradesComponent
+    GroupsListComponent,
+    StudentsListInGroupComponent
   ],
   imports: [
     BrowserModule,
