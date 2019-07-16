@@ -12,6 +12,8 @@ import { TokenStorage } from 'src/app/helpers/token.storage';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MDBBootstrapModule} from 'angular-bootstrap-md';
+import { SubjectListComponent } from './components/subject-list/subject-list.component';
+import { GradesComponent } from './components/grades/grades.component';
 
 
 
@@ -21,7 +23,9 @@ import { MDBBootstrapModule} from 'angular-bootstrap-md';
     AppComponent,
     TopBarComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    SubjectListComponent,
+    GradesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,6 @@
+<p>subject-list works!</p>
+<ul>
+  <a *ngFor="let sub of subjects" routerLink="/grades/{{sub[0]}}">
+   <li> {{sub[1]}} </li>
+  </a>
+</ul>
