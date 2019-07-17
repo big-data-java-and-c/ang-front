@@ -12,7 +12,7 @@ import {Groups} from '../../models/Groups';
 })
 export class StudentsListInGroupComponent implements OnInit {
   private students: Students[];
-  private group: Groups;
+  private group: Groups = new Groups();
   private id: string;
   constructor(
     private studentsService: StudentService,
