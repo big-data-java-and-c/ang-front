@@ -1,0 +1,22 @@
+<div >
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th  scope="col">Przedmiot</th>
+    </tr>
+    </thead>
+
+    <tr *ngFor="let subject of subjects">
+
+      <th *ngIf="subject[1], else elseBlock"><a [routerLink]="['ofSubject/' + subject[0] ]" >{{subject[1]}}</a></th>
+
+      <ng-template #elseBlock>
+        <th>NO DATA</th>
+      </ng-template>
+      <!--      <ng-template #elseNameBlock><th><a [routerLink]="['accountDetails/' + account.id]" >NO DATA</a></th></ng-template>-->
+
+
+    </tr>
+
+  </table>
+</div>

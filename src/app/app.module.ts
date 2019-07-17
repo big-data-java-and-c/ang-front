@@ -16,6 +16,8 @@ import { SubjectListComponent } from './components/subject-list/subject-list.com
 import { GradesComponent } from './components/grades/grades.component';
 import { GroupsListComponent } from './components/groups-list/groups-list.component';
 import { StudentsListInGroupComponent } from './components/students-list-in-group/students-list-in-group.component';
+import { StudentsSubjectsListComponent } from './components/students-subjects-list/students-subjects-list.component';
+import { StudentGradesOfSubjectComponent } from './components/student-grades-of-subject/student-grades-of-subject.component';
 
 
 
@@ -30,7 +32,9 @@ import { StudentsListInGroupComponent } from './components/students-list-in-grou
     SubjectListComponent,
     GradesComponent,
     GroupsListComponent,
-    StudentsListInGroupComponent
+    StudentsListInGroupComponent,
+    StudentsSubjectsListComponent,
+    StudentGradesOfSubjectComponent
   ],
   imports: [
     BrowserModule,
