@@ -8,6 +8,7 @@
     <th  scope="col">Miasto</th>
     <th  scope="col">Kod pocztowy</th>
     <th  scope="col">Numer telefonu </th>
+    <th></th>
   </tr>
   </thead>
 
@@ -18,6 +19,7 @@
     <th *ngIf="student.city, else elseBlock">{{student.city}}</th>
     <th *ngIf="student.zip_code, else elseBlock">{{student.zip_code}}</th>
     <th *ngIf="student.phone_number, else elseBlock">{{student.phone_number}}</th>
+    <th><button [routerLink]="['studentSubjects/' + student.id]">przedmioty</button></th>
 
     <ng-template #elseBlock>
       <th>NO DATA</th>
