@@ -44,12 +44,12 @@ export class LoginComponent implements OnInit {
       }
 
       this.loading = true;
-      sessionStorage.setItem('currentUserEmail', this.f.email.value);
+      sessionStorage.setItem('currentUserEmail', this.loginForm.controls.email.value);
       this.authenticationService
-        .loginClient(this.f.email.value, this.f.password.value)
+        .loginClient(this.loginForm.controls.email.value, this.loginForm.controls.password.value)
         .toPromise()
         .then(data => {
-          console.log("success");
+          this.toaster.success('Witamy uzytkowniku');
           this.token.saveToken(data.response.token);
           this.res = data;
           sessionStorage.setItem('userId', this.res.userId.toString());
@@ -63,12 +63,4 @@ export class LoginComponent implements OnInit {
           this.toaster.error('bad credentials');
         });
     }
-
-    get f() {
-      return this.loginForm.controls;
-    }
-
-    getErrorMessage() {
-      return this.f.email.hasError('required') ? 'Wprowadź wartość' : this.f.email.hasError('email') ? 'Wprowadź poprawny adres email' : '';
-    }
-}
+  }
