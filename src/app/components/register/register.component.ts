@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
@@ -18,13 +19,16 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   roles = ['STUDENT', 'TEACHER'];
 
-  constructor(private fb: FormBuilder,
+  constructor(
+    private fb: FormBuilder,
     private toastrS: ToastrService,
     private userService: UserService,
+    private router: Router
   ) {
   }
 
   ngOnInit() {
+
     this.registerForm = this.fb.group({
       email: ['', Validators.required, Validators.pattern[('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$')]],
       password: ['', [Validators.required, Validators.minLength(8)]],
@@ -39,13 +43,13 @@ export class RegisterComponent implements OnInit {
     this.isSubmited = true;
     if (this.registerForm.invalid) {
       console.log('invalid form registry');
+      this.toastrS.error('Formularz niepoprawnie uzupelniony');
       return;
     }
     if (this.registerForm.value.password !== this.registerForm.value.confirmPassword) {
-
-      console.log(this.registerForm.value.password);
-      console.log(this.registerForm.value.confirmPassword);
-      console.log('password dont match');
+     // console.log(this.registerForm.value.password);
+     // console.log(this.registerForm.value.confirmPassword);
+      this.toastrS.error('Hasłą są rózne');
       return;
     }
 
@@ -60,11 +64,13 @@ export class RegisterComponent implements OnInit {
       .then(sukces => {
         console.log(sukces);
         console.log('succesfully registratio n');
+        this.toastrS.success('Poprawnie stworzono konto');
       })
       .catch(e => {
-        console.log(e);
-        console.log('err already in use');
+        this.toastrS.success('Poprawnie stworzono konto');
+        console.log('nie umie obsluzyc textu');
       });
+      this.router.navigate(['/login']);
   }
 }
 
