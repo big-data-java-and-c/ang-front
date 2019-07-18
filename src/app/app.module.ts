@@ -45,6 +45,7 @@ import {MatTableModule} from '@angular/material';
     MDBBootstrapModule.forRoot(),
     HttpClientModule,
     ToastrModule.forRoot(),
+
     BrowserAnimationsModule,
     MatTableModule,
   ],

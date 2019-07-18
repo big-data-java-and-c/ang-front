@@ -9,10 +9,12 @@ import {GroupsService} from '../../services/groups.service';
 })
 export class GroupsListComponent implements OnInit {
   private groups: Groups[]
+  private roleId: number;
   constructor(private groupsService: GroupsService) { }
 
   ngOnInit() {
     this.groupsService.getGroups().subscribe(data => this.groups = data);
+    this.roleId = +sessionStorage.getItem('roleId');
     // console.log(this.groups.);
   }
 
