@@ -1,14 +1,16 @@
-<div >
+<div *ngIf="roleId == 3">
+
   <table class="table">
     <thead class="thead-dark">
-    <tr>
-      <th  scope="col">Grupa</th>
-    </tr>
+      <tr>
+        <th scope="col">Grupa</th>
+      </tr>
     </thead>
 
     <tr *ngFor="let group of groups">
 
-      <th *ngIf="group.name_grupy, else elseBlock"><a [routerLink]="['group/' + group.id_group]">{{group.name_grupy}}</a></th>
+      <th *ngIf="group.name_grupy, else elseBlock"><a
+          [routerLink]="['group/' + group.id_group]">{{group.name_grupy}}</a></th>
 
       <ng-template #elseBlock>
         <th>NO DATA</th>
@@ -20,3 +22,4 @@
 
   </table>
 </div>
+<div *ngIf="roleId == 2">Brak uprawnień, zaloguj się na konto nauczyciela</div>

@@ -1,2 +1,48 @@
-<app-top-bar></app-top-bar>
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark" *ngIf="authenticationService.isAuthenticated()">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" href="#">Jibrus</a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+
+  <div *ngIf="roleId == 2"><a routerLink=""><i class="fas fa-user"></i> <b>Student</b></a></div>
+  <div *ngIf="roleId == 3"><a routerLink=""> <b><i class="fas fa-user"></i> Nauczyciel</b></a></div>
+  <div *ngIf="roleId == 1"><a routerLink=""><b><i class="fas fa-user"></i> ADMIN</b></a></div>
+  <links>
+
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" *ngIf="roleId == 3">
+        <a routerLink="/groupsList" class="nav-link waves-light" mdbWavesEffect>Grupy</a>
+      </li>
+      <li class="nav-item" *ngIf="roleId == 2">
+        <a routerLink="/subjectlist" class="nav-link waves-light" mdbWavesEffect>Przedmioty</a>
+      </li>
+
+      <li class="nav-item">
+        <a routerLink="" class="nav-link waves-light" (click)="logout()" mdbWavesEffect>Wyloguj się</a>
+      </li>
+    </ul>
+
+  </links>
+  <!-- Collapsible content -->
+</mdb-navbar>
+
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark" *ngIf="!authenticationService.isAuthenticated()">
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" href="#">Jibrus</a></mdb-navbar-brand>
+  <!-- Collapsible content -->
+  <links>
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a routerLink="/signup" class="nav-link waves-light" mdbWavesEffect>Rejestracjat</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/login" class="nav-link waves-light" mdbWavesEffect>Zaloguj</a>
+      </li>
+    </ul>
+    <!-- Links -->
+  </links>
+  <!-- Collapsible content -->
+</mdb-navbar>
 <router-outlet></router-outlet>
