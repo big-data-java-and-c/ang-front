@@ -7,7 +7,7 @@ tr.example-detail-row {
 }
 
 tr.example-element-row:not(.example-expanded-row):hover {
-  background: #777;
+  background: #d1d1d1;
 }
 
 tr.example-element-row:not(.example-expanded-row):active {
@@ -44,4 +44,8 @@ tr.example-element-row:not(.example-expanded-row):active {
 
 .example-element-description-attribution {
   opacity: 0.5;
+}
+.oceny{
+  padding-left: 10.5em;
+  padding-bottom: 1.5em;
 }
