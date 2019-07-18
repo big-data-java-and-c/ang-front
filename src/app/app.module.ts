@@ -18,6 +18,7 @@ import { GroupsListComponent } from './components/groups-list/groups-list.compon
 import { StudentsListInGroupComponent } from './components/students-list-in-group/students-list-in-group.component';
 import { StudentsSubjectsListComponent } from './components/students-subjects-list/students-subjects-list.component';
 import { StudentGradesOfSubjectComponent } from './components/student-grades-of-subject/student-grades-of-subject.component';
+import {MatTableModule} from '@angular/material';
 
 
 
@@ -45,6 +46,7 @@ import { StudentGradesOfSubjectComponent } from './components/student-grades-of-
     HttpClientModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
+    MatTableModule,
   ],
   providers: [    TokenStorage  ],
   bootstrap: [AppComponent]
