@@ -4,6 +4,8 @@ import {Observable} from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from './../../environments/environment';
 import {Grade} from '../models/Grade';
+import {logging} from 'selenium-webdriver';
+import removeConsoleHandler = logging.removeConsoleHandler;
 
 
 @Injectable({
@@ -21,7 +23,8 @@ export class GradesService {
     console.log(sessionStorage.getItem('userId'));
     return this.http.get<number[]>(`${environment.backendUrl}/api/grade/grades/${id}/student/${sessionStorage.getItem('userId')}`);
   }
-  getAllStudentGrades(studentId: string){
+
+  getAllStudentGrades(studentId: string) {
     return this.http.get<Grade[]>(`${environment.backendUrl}/api/grade/all/${studentId}`);
   }
 
@@ -31,5 +34,9 @@ export class GradesService {
 
   getgetGradesBySubjaectIdAndStudentId(subjectId: string, studentId: string) {
     return this.http.get<Grade[]>(`${environment.backendUrl}/api/grade/subject/${subjectId}/student/${studentId}`);
+  }
+
+  deleteGradeById(gradeId: number) {
+    return this.http.delete(`${environment.backendUrl}/api/grade/delete/${gradeId}`);
   }
 }

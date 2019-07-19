@@ -44,4 +44,8 @@ export class StudentGradesOfSubjectComponent implements OnInit {
   }
 
 
+  deleteGrade(id_grade: number){
+    this.gradesService.deleteGradeById(id_grade).subscribe();
+    console.log(id_grade);
+  }
 }

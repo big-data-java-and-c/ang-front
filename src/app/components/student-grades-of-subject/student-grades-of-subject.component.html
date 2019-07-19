@@ -3,7 +3,7 @@
   <div *ngIf="grades.length>0, else elseBlock">
     <tr *ngFor="let grade of grades">
       <th>{{grade.value_grade}}</th>
-      <th><button>Usuń ocene</button></th>
+      <th><button (click)="deleteGrade(grade.id_grade)">Usuń ocene</button></th>
     </tr>
   </div>
 
@@ -11,3 +11,4 @@
     <th>Nie masz jeszcze ocen z tego przedmiotu</th>
   </ng-template>
 </table>
+
