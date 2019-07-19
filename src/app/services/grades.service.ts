@@ -28,4 +28,8 @@ export class GradesService {
   getgetGradesValueBySubjaectIdAndStudentId(subjectId: string, studentId: string) {
     return this.http.get<number[]>(`${environment.backendUrl}/api/grade/grades/${subjectId}/student/${studentId}`);
   }
+
+  getgetGradesBySubjaectIdAndStudentId(subjectId: string, studentId: string) {
+    return this.http.get<Grade[]>(`${environment.backendUrl}/api/grade/subject/${subjectId}/student/${studentId}`);
+  }
 }

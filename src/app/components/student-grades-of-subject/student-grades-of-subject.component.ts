@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {GradesService} from '../../services/grades.service';
 import {SubjectServiceService} from '../../services/subject-service.service';
 import {Subject} from '../../models/subject';
+import {Grade} from '../../models/Grade';
 
 @Component({
   selector: 'app-student-grades-of-subject',
@@ -12,7 +13,8 @@ import {Subject} from '../../models/subject';
 export class StudentGradesOfSubjectComponent implements OnInit {
   private studentId: string;
   private subjectId: string;
-  private grades: number[];
+  // private grades: number[];
+  private grades: Grade[];
   private subjects: Subject[];
   private subjectName: string;
 
@@ -36,7 +38,8 @@ export class StudentGradesOfSubjectComponent implements OnInit {
     this.grades = [];
     this.subjectId = this.route.snapshot.paramMap.get('subjectId');
     this.studentId = this.route.snapshot.paramMap.get('studentId');
-    this.gradesService.getgetGradesValueBySubjaectIdAndStudentId(this.subjectId, this.studentId).subscribe(data => this.grades = data);
+    // this.gradesService.getgetGradesValueBySubjaectIdAndStudentId(this.subjectId, this.studentId).subscribe(data => this.grades = data);
+    this.gradesService.getgetGradesBySubjaectIdAndStudentId(this.subjectId, this.studentId).subscribe(data => this.grades = data);
     this.subjectService.getSubjects().subscribe(data => this.subjects = data);
   }
 

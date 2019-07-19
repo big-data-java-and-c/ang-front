@@ -2,7 +2,8 @@
 <table class="table">
   <div *ngIf="grades.length>0, else elseBlock">
     <tr *ngFor="let grade of grades">
-      <th>{{grade}}</th>
+      <th>{{grade.value_grade}}</th>
+      <th><button>Usuń ocene</button></th>
     </tr>
   </div>
 
