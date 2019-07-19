@@ -57,6 +57,7 @@ export class StudentsSubjectsListComponent implements OnInit {
     });
   }
 
+
   addSubjectsToView() {
     for (let i = 0; i < this.subjects.length; i++) {
       this.dataSource.push({
