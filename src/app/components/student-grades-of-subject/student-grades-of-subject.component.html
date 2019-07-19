@@ -2,14 +2,58 @@
 <table class="table">
   <div *ngIf="grades.length>0, else elseBlock">
     <tr *ngFor="let grade of grades;let index =index ;trackBy:trackByIndex">
-      <div *ngIf ="grade != null"> 
+      <div *ngIf="grade != null">
         <th>{{grade.value_grade}}</th>
-        <th><button (click)="deleteGrade(grade.id_grade)">Usuń ocene</button></th>
+        <th>
+          <button (click)="deleteGrade(grade.id_grade)">Usuń ocene</button>
+        </th>
       </div>
     </tr>
+    <tr>
+      <div>
+              <form [formGroup]="transferFormGroup" (ngSubmit)="onSubmit()">
+                <th><label for="newGrade">Dodaj ocene</label></th>
+                <th>
+                <div>
+                  <input type="text" formControlName="newGrade" id="newGrade" required>
+                </div>
+                </th>
+                <th>
+                <div><button type="submit" class="btn btn-success">Dodaj</button></div>
+                </th>
+              </form>
+      </div>
+    </tr>
+<!--    <td>-->
+<!--        <h1>Stwórz Przelew </h1>-->
+<!--        <form [formGroup]="transferFormGroup" (ngSubmit)="onSubmit()">-->
+<!--          <div>-->
+<!--            <label for="sendingAccountNumber">Z konta</label>-->
+<!--            <input type="text" formControlName="sendingAccountNumber" id="sendingAccountNumber" required>-->
+<!--          </div>-->
+<!--        </form>-->
+
+<!--    </td>-->
   </div>
 
+
+
   <ng-template #elseBlock>
-    <th>Nie masz jeszcze ocen z tego przedmiotu</th>
+    <tr>Nie masz jeszcze ocen z tego przedmiotu</tr>
+    <tr>
+      <div>
+        <form [formGroup]="transferFormGroup" (ngSubmit)="onSubmit()">
+          <th><label for="newGrade">Dodaj ocene</label></th>
+          <th>
+            <div>
+              <input type="text" formControlName="newGrade" id="newGrade" required>
+            </div>
+          </th>
+          <th>
+            <div><button type="submit" class="btn btn-success">Dodaj</button></div>
+          </th>
+        </form>
+      </div>
+    </tr>
   </ng-template>
 </table>

@@ -39,4 +39,8 @@ export class GradesService {
   deleteGradeById(gradeId: number) {
     return this.http.delete(`${environment.backendUrl}/api/grade/delete/${gradeId}`);
   }
+
+  addNewGrade(gradeToSend: Grade) {
+    return this.http.post<Grade>(`${environment.backendUrl}/api/grade/add`, gradeToSend);
+  }
 }
