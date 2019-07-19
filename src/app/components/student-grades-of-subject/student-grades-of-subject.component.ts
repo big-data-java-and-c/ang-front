@@ -46,6 +46,11 @@ export class StudentGradesOfSubjectComponent implements OnInit {
 
   deleteGrade(id_grade: number){
     this.gradesService.deleteGradeById(id_grade).subscribe();
+    this.grades[id_grade-1] = null;
+    this.grades = this.grades.filter(item => item.id_grade != id_grade);
+    
+    this.gradesService.getgetGradesBySubjaectIdAndStudentId(this.subjectId, this.studentId).subscribe(data => this.grades = data);
+    this.ngOnInit();
     console.log(id_grade);
   }
 }

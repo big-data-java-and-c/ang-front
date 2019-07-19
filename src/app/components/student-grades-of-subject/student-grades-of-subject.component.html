@@ -1,9 +1,11 @@
 <h2>{{subjectName}}</h2>
 <table class="table">
   <div *ngIf="grades.length>0, else elseBlock">
-    <tr *ngFor="let grade of grades">
-      <th>{{grade.value_grade}}</th>
-      <th><button (click)="deleteGrade(grade.id_grade)">Usuń ocene</button></th>
+    <tr *ngFor="let grade of grades;let index =index ;trackBy:trackByIndex">
+      <div *ngIf ="grade != null"> 
+        <th>{{grade.value_grade}}</th>
+        <th><button (click)="deleteGrade(grade.id_grade)">Usuń ocene</button></th>
+      </div>
     </tr>
   </div>
 
@@ -11,4 +13,3 @@
     <th>Nie masz jeszcze ocen z tego przedmiotu</th>
   </ng-template>
 </table>
-
