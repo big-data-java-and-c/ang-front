@@ -10,4 +10,7 @@ export class Grade {
   teacher: Teacher;
   subject: Subject;
 
+
+  constructor() {
+  }
 }
