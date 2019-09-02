@@ -11,8 +11,10 @@ export class Students {
   zip_code: string;
   phone_number: string;
 
+  groupId: number;
   group: Groups;
+  userId: number;
   user: User;
-  grade: Grade;
+  // grade: Grade;
 
 }

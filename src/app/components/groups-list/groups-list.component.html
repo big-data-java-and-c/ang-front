@@ -9,8 +9,8 @@
 
     <tr *ngFor="let group of groups">
 
-      <th *ngIf="group.name_grupy, else elseBlock"><a
-          [routerLink]="['group/' + group.id_group]">{{group.name_grupy}}</a></th>
+      <th *ngIf="group.groupName, else elseBlock"><a
+          [routerLink]="['group/' + group.id]">{{group.groupName}}</a></th>
 
       <ng-template #elseBlock>
         <th>NO DATA</th>
