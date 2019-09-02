@@ -15,7 +15,6 @@ export class GroupsListComponent implements OnInit {
   ngOnInit() {
     this.groupsService.getGroups().subscribe(data => this.groups = data);
     this.roleId = +sessionStorage.getItem('roleId');
-    // console.log(this.groups.);
   }
 
 }
