@@ -16,9 +16,9 @@ export class StudentGradesOfSubjectComponent implements OnInit {
   private studentId: string;
   private subjectId: string;
   // private grades: number[];
-  private grades: Grade[];
-  private subjects: Subject[];
-  private subjectName: string;
+   grades: Grade[];
+   subjects: Subject[];
+   subjectName: string;
   transferFormGroup: FormGroup;
   private gradeToSend: Grade;
 

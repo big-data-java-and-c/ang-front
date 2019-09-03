@@ -1,7 +1,7 @@
 <h2>{{subjectName}}</h2>
 <table class="table">
   <div *ngIf="grades.length>0, else elseBlock">
-    <tr *ngFor="let grade of grades;let index =index ;trackBy:trackByIndex">
+    <tr *ngFor="let grade of grades;let index =index ;trackBy:index">
       <div *ngIf="grade != null">
         <th>{{grade.value_grade}}</th>
         <th>

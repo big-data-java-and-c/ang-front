@@ -20,6 +20,7 @@ export class SubjectListComponent implements OnInit {
     .toPromise()
     .then( data => {
       this.subjects = data;
+      console.log(data);
     })
     .catch(e => {
       console.log(e);
