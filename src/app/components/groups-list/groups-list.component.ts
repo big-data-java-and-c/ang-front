@@ -8,8 +8,8 @@ import {GroupsService} from '../../services/groups.service';
   styleUrls: ['./groups-list.component.css']
 })
 export class GroupsListComponent implements OnInit {
-  private groups: Groups[]
-  private roleId: number;
+   groups: Groups[];
+   roleId: number;
   constructor(private groupsService: GroupsService) { }
 
   ngOnInit() {

@@ -11,9 +11,10 @@ import {Groups} from '../../models/Groups';
   styleUrls: ['./students-list-in-group.component.css']
 })
 export class StudentsListInGroupComponent implements OnInit {
-  private students: Students[];
-  private group: Groups = new Groups();
-  private id: string;
+   students: Students[];
+   group: Groups = new Groups();
+   groupName: string;
+   id: string;
   constructor(
     private studentsService: StudentService,
     private groupsService: GroupsService,
@@ -23,7 +24,11 @@ export class StudentsListInGroupComponent implements OnInit {
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
     this.studentsService.getStudentsByGroupId(this.id).subscribe(data => this.students = data);
-    this.groupsService.getGroupById(this.id).subscribe(data => this.group = data);
+    this.groupsService
+    .getGroupById(this.id)
+    .subscribe(data => {this.groupName = data.groupName;
+  //  console.log(this.group.groupName);
+    });
   }
 
 }

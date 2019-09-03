@@ -21,6 +21,8 @@ export class GradesService {
   getGrades(id: number): Observable<number[]> {
     console.log('userId -> ');
     console.log(sessionStorage.getItem('userId'));
+    console.log('id');
+    console.log(id)
     return this.http.get<number[]>(`${environment.backendUrl}/api/grade/grades/${id}/student/${sessionStorage.getItem('userId')}`);
   }
 
