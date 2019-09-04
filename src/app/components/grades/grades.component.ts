@@ -1,16 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GradesService } from 'src/app/services/grades.service';
+import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-grades',
   templateUrl: './grades.component.html',
-  styleUrls: ['./grades.component.css']
+  styleUrls: ['./grades.component.css'],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({height: '0px', minHeight: '0'})),
+      state('expanded', style({height: '*'})),
+      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    ]),
+  ]
 })
 export class GradesComponent implements OnInit {
   id: any;
   grades: number[];
   avgGrades: number;
+  columnsToDisplay = ['name'];
   constructor(private gradesService: GradesService,
     private route: ActivatedRoute) { }
 
