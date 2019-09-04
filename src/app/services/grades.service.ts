@@ -31,7 +31,7 @@ export class GradesService {
   }
 
   getgetGradesBySubjaectIdAndStudentId(subjectId: string, studentId: string) {
-    return this.http.get<Grade[]>(`${environment.backendUrl}/api/grade/subject/${subjectId}/student/${studentId}`);
+    return this.http.get<Grade[]>(`${environment.backendUrl}/api/grade/grades/${subjectId}/student/${studentId}`);
   }
 
   deleteGradeById(gradeId: number) {

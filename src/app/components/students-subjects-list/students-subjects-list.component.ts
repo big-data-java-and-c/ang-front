@@ -50,6 +50,7 @@ export class StudentsSubjectsListComponent implements OnInit {
             this.dataSource = ELEMENT_DATA;
             this.dataSource = []; // to musi być żeby sie za każdym wejściem w liste przedmiotów nie dodawały nowe
             this.subjects = innerData;
+            console.log(innerData);
             this.addSubjectsToView();
             console.log(this.allStdentsGrades[1].value_grade);
           }
@@ -61,10 +62,10 @@ export class StudentsSubjectsListComponent implements OnInit {
   addSubjectsToView() {
     for (let i = 0; i < this.subjects.length; i++) {
       this.dataSource.push({
-        name: this.subjects[i][1],
+        name: this.subjects[i].name,
         grades: ['Tu będa oceny #ihope', ' coś innego'],
         // grades: ['Tu będa oceny #ihope', ' coś innego'],
-        id: this.subjects[i][0]
+        id: this.subjects[i].id
       });
       console.log(this.dataSource);
     }

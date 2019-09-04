@@ -49,7 +49,12 @@ export class StudentGradesOfSubjectComponent implements OnInit {
     this.subjectId = this.route.snapshot.paramMap.get('subjectId');
     this.studentId = this.route.snapshot.paramMap.get('studentId');
     // this.gradesService.getgetGradesValueBySubjaectIdAndStudentId(this.subjectId, this.studentId).subscribe(data => this.grades = data);
-    this.gradesService.getgetGradesBySubjaectIdAndStudentId(this.subjectId, this.studentId).subscribe(data => this.grades = data);
+    this.gradesService.getgetGradesBySubjaectIdAndStudentId(this.subjectId, this.studentId)
+    .subscribe(data => {this.grades = data;
+    console.log(this.grades);
+    });
+
+
     this.subjectService.getSubjects().subscribe(data => this.subjects = data);
     this.transferFormGroup = this.fb.group({
       newGrade: ''
@@ -59,9 +64,8 @@ export class StudentGradesOfSubjectComponent implements OnInit {
 
   deleteGrade(id_grade: number) {
     this.gradesService.deleteGradeById(id_grade).subscribe();
-    this.grades[id_grade - 1] = null;
+    //this.grades[id_grade - 1] = null;
     this.grades = this.grades.filter(item => item.id != id_grade);
-
     this.gradesService.getgetGradesBySubjaectIdAndStudentId(this.subjectId, this.studentId).subscribe(data => this.grades = data);
     this.ngOnInit();
     console.log(id_grade);
