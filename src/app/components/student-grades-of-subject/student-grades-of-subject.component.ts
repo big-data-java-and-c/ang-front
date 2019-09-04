@@ -66,17 +66,23 @@ export class StudentGradesOfSubjectComponent implements OnInit {
     this.gradesService.deleteGradeById(id_grade).subscribe();
     //this.grades[id_grade - 1] = null;
     this.grades = this.grades.filter(item => item.id != id_grade);
-    this.gradesService.getgetGradesBySubjaectIdAndStudentId(this.subjectId, this.studentId).subscribe(data => this.grades = data);
+    this.gradesService.getgetGradesBySubjaectIdAndStudentId(this.subjectId, this.studentId)
+    .subscribe(data => this.grades = data);
     this.ngOnInit();
     console.log(id_grade);
   }
 
   onSubmit() {
     this.gradeToSend.value_grade = this.transferFormGroup.value.newGrade;
-    this.gradeToSend.subject.id = parseInt(this.subjectId, 10);
-    this.gradeToSend.student.id = parseInt(this.studentId, 10);
-    console.log(this.gradeToSend.value_grade);
-    console.log(this.gradeToSend.subject.id);
+    this.gradeToSend.subjectId = parseInt(this.subjectId, 10);
+    this.gradeToSend.studentId = parseInt(this.studentId, 10);
+    this.gradeToSend.date_received = new Date().toISOString();
+    this.gradeToSend.teacherId = parseInt(sessionStorage.getItem('userId'), 10);
+     // na becku zamieni id usera na id teachera, innaczje nie moge zrobic - do sprawdzenia
+    // id na becku
+    console.log('gradeTosend');
+    //console.log(this.gradeToSend.value_grade);
+    console.log(this.gradeToSend);
     this.gradesService.addNewGrade(this.gradeToSend).subscribe();
     this.ngOnInit();
   }
