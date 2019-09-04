@@ -10,15 +10,17 @@ import { GradesService } from 'src/app/services/grades.service';
 export class GradesComponent implements OnInit {
   id: any;
   grades: number[];
+  avgGrades: number;
   constructor(private gradesService: GradesService,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.gradesService.getGrades(this.id).subscribe(data => {this.grades = data
-    console.log(data)
+    this.gradesService.getGrades(this.id).subscribe(data => {
+      this.grades = data.map(e => e.value_grade);
+      this.avgGrades = this.grades.reduce((p, c) => c += p);
+      this.avgGrades = this.avgGrades / this.grades.length;
     });
-    console.log(this.grades);
   }
 
 }
