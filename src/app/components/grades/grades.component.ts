@@ -17,7 +17,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 })
 export class GradesComponent implements OnInit {
   id: any;
-  grades: number[];
+  grades: number[] = new Array();
   avgGrades: number;
   columnsToDisplay = ['name'];
   constructor(private gradesService: GradesService,
