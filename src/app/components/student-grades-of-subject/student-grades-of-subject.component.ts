@@ -49,7 +49,7 @@ export class StudentGradesOfSubjectComponent implements OnInit {
     this.subjectId = this.route.snapshot.paramMap.get('subjectId');
     this.studentId = this.route.snapshot.paramMap.get('studentId');
     // this.gradesService.getgetGradesValueBySubjaectIdAndStudentId(this.subjectId, this.studentId).subscribe(data => this.grades = data);
-    this.gradesService.getgetGradesBySubjaectIdAndStudentId(this.subjectId, this.studentId)
+    this.gradesService.getgetGradesBySubjaectIdAndStudentIdTeacherView(this.subjectId, this.studentId)
     .subscribe(data => {this.grades = data;
     console.log(this.grades);
     });

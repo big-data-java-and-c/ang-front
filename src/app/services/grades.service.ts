@@ -31,6 +31,9 @@ export class GradesService {
   getgetGradesValueBySubjaectIdAndStudentId(subjectId: string, studentId: string) {
     return this.http.get<number[]>(`${environment.backendUrl}/api/grade/grades/${subjectId}/student/${studentId}`);
   }
+  getgetGradesBySubjaectIdAndStudentIdTeacherView(subjectId: string, studentId: string) {
+    return this.http.get<Grade[]>(`${environment.backendUrl}/api/grade/grades/${subjectId}/studentTeacher/${studentId}`);
+  }
 
   getgetGradesBySubjaectIdAndStudentId(subjectId: string, studentId: string) {
     return this.http.get<Grade[]>(`${environment.backendUrl}/api/grade/grades/${subjectId}/student/${studentId}`);
