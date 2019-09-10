@@ -19,6 +19,8 @@ import { StudentsListInGroupComponent } from './components/students-list-in-grou
 import { StudentsSubjectsListComponent } from './components/students-subjects-list/students-subjects-list.component';
 import { StudentGradesOfSubjectComponent } from './components/student-grades-of-subject/student-grades-of-subject.component';
 import {MatTableModule} from '@angular/material';
+import { UserFormComponent } from './components/user-form/user-form.component';
+
 
 
 
@@ -35,7 +37,9 @@ import {MatTableModule} from '@angular/material';
     GroupsListComponent,
     StudentsListInGroupComponent,
     StudentsSubjectsListComponent,
-    StudentGradesOfSubjectComponent
+    StudentGradesOfSubjectComponent,
+    UserFormComponent,
+
   ],
   imports: [
     BrowserModule,

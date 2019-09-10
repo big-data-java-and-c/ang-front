@@ -1,0 +1,30 @@
+<div col="md-4"></div>
+<form #studentForm="ngForm" style="margin: 25px">
+  <div>
+    <label> Imie: </label>
+    <input [(ngModel)]="student.displayName" #displayName="ngModel" name="displayName">
+  </div>
+  <div>
+    <label> Adress: </label>
+    <input [(ngModel)]="student.address" #displayName="ngModel" name="address">
+  </div>
+  <div>
+    <label> Miasto: </label>
+    <input [(ngModel)]="student.city" #displayName="ngModel" name="city">
+  </div>
+  <div>
+    <label> Województwo: </label>
+    <input [(ngModel)]="student.province" #displayName="ngModel" name="province">
+  </div>
+  <div>
+    <label> Kod Pocztowy: </label>
+    <input [(ngModel)]="student.zip_code" #displayName="ngModel" name="zip_code">
+  </div>
+  <div>
+    <label> Numer telefonu: </label>
+    <input [(ngModel)]="student.phone_number" #displayName="ngModel" name="phone_number">
+  </div>
+
+  <button type="submit" (click)=onSubmit()> Update </button>
+
+</form>

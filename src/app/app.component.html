@@ -17,7 +17,9 @@
       <li class="nav-item" *ngIf="roleId == 2">
         <a routerLink="/subjectlist" class="nav-link waves-light" mdbWavesEffect>Przedmioty</a>
       </li>
-
+      <li class="nav-item" *ngIf="roleId == 2">
+        <a routerLink="/user-form" class="nav-link waves-light" mdbWavesEffect>Moje dane</a>
+      </li>
       <li class="nav-item">
         <a routerLink="" class="nav-link waves-light" (click)="logout()" mdbWavesEffect>Wyloguj się</a>
       </li>

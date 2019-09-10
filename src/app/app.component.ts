@@ -24,10 +24,11 @@ export class AppComponent {
   }
 
   goToEdit() {
-    this.router.navigate(['account-editing/' + this.userId]);
+    this.router.navigate(['user-form/' + this.userId]);
   }
 
   logout() {
+    this.router.navigate(['/']);
     sessionStorage.clear();
     location.reload();
   }
