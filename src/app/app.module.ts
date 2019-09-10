@@ -20,6 +20,7 @@ import { StudentsSubjectsListComponent } from './components/students-subjects-li
 import { StudentGradesOfSubjectComponent } from './components/student-grades-of-subject/student-grades-of-subject.component';
 import {MatTableModule} from '@angular/material';
 import { UserFormComponent } from './components/user-form/user-form.component';
+import { StudentsListComponent } from './components/students-list/students-list.component';
 
 
 
@@ -39,6 +40,7 @@ import { UserFormComponent } from './components/user-form/user-form.component';
     StudentsSubjectsListComponent,
     StudentGradesOfSubjectComponent,
     UserFormComponent,
+    StudentsListComponent,
 
   ],
   imports: [

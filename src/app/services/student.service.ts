@@ -12,6 +12,10 @@ export class StudentService {
 
   constructor(private http: HttpClient) { }
 
+  getStudents(): Observable<Students[]> {
+    return this.http.get<Students[]>(`${environment.backendUrl}/api/student`);
+  }
+
   getStudentsByGroupId(id: string): Observable<Students[]> {
     return this.http.get<Students[]>(`${environment.backendUrl}/api/student/group/${id}`);
   }
@@ -31,9 +35,9 @@ export class StudentService {
     return this.http.get<Students>(`${environment.backendUrl}/api/student/studentbyuserid/${userId}`);
   }
 
-  save(student: Students):Observable<Object> {
+  save(student: Students): Observable<Object> {
     console.log(student);
-   // http://localhost:8081/api/student/add
+    // http://localhost:8081/api/student/add
     return this.http.put<Object>('http://localhost:8081/api/student/add', student);
   }
 }

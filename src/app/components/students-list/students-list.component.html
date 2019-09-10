@@ -1,0 +1,21 @@
+<p>students-list works!</p>
+<table>
+  <tr *ngFor="let student of students">
+
+    <th *ngIf="student.displayName, else elseBlock">{{student.displayName}}</th>
+
+   <!--  <th><button [routerLink]="['studentSubjects/' + student.id]">przedmioty</button></th> -->
+    <th>
+      <select [(ngModel)]="groupToSave">
+        <option *ngFor="let group of groups" > {{group.groupName}}</option>
+      </select>
+    </th>
+    <ng-template #elseBlock>
+      <th>NO DATA</th>
+    </ng-template>
+    <!--      <ng-template #elseNameBlock><th><a [routerLink]="['accountDetails/' + account.id]" >NO DATA</a></th></ng-template>-->
+
+
+  </tr>
+
+</table>
