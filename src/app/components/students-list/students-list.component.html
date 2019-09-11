@@ -3,12 +3,9 @@
   <tr *ngFor="let student of students">
 
     <th *ngIf="student.displayName, else elseBlock">{{student.displayName}}</th>
-
-   <!--  <th><button [routerLink]="['studentSubjects/' + student.id]">przedmioty</button></th> -->
+    <th>{{groups[student.groupId - 1].groupName}}</th>
     <th>
-      <select [(ngModel)]="groupToSave">
-        <option *ngFor="let group of groups" > {{group.groupName}}</option>
-      </select>
+      <button mat-button color="primary" (click)="edit(student.id)">Zapisz</button>
     </th>
     <ng-template #elseBlock>
       <th>NO DATA</th>
@@ -17,5 +14,6 @@
 
 
   </tr>
+
 
 </table>

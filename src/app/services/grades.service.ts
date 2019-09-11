@@ -47,4 +47,4 @@ export class GradesService {
     console.log(gradeToSend);
     return this.http.post<Grade>(`${environment.backendUrl}/api/grade/add`, gradeToSend);
   }
-}
+  }

@@ -18,9 +18,11 @@ import { GroupsListComponent } from './components/groups-list/groups-list.compon
 import { StudentsListInGroupComponent } from './components/students-list-in-group/students-list-in-group.component';
 import { StudentsSubjectsListComponent } from './components/students-subjects-list/students-subjects-list.component';
 import { StudentGradesOfSubjectComponent } from './components/student-grades-of-subject/student-grades-of-subject.component';
-import {MatTableModule} from '@angular/material';
+import {MatInputModule, MatSelectModule, MatTableModule} from '@angular/material';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { StudentsListComponent } from './components/students-list/students-list.component';
+import { UpdateStudentGroupComponent } from './components/update-student-group/update-student-group.component';
+import {CommonModule} from '@angular/common';
 
 
 
@@ -41,10 +43,12 @@ import { StudentsListComponent } from './components/students-list/students-list.
     StudentGradesOfSubjectComponent,
     UserFormComponent,
     StudentsListComponent,
+    UpdateStudentGroupComponent,
 
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
@@ -54,6 +58,8 @@ import { StudentsListComponent } from './components/students-list/students-list.
 
     BrowserAnimationsModule,
     MatTableModule,
+    MatInputModule,
+    MatSelectModule,
   ],
   providers: [    TokenStorage  ],
   bootstrap: [AppComponent]

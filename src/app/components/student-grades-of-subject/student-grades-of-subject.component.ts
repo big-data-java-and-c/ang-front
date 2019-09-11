@@ -16,9 +16,9 @@ export class StudentGradesOfSubjectComponent implements OnInit {
   private studentId: string;
   private subjectId: string;
   // private grades: number[];
-   grades: Grade[];
-   subjects: Subject[];
-   subjectName: string;
+  grades: Grade[];
+  subjects: Subject[];
+  subjectName: string;
   transferFormGroup: FormGroup;
   private gradeToSend: Grade;
 
@@ -50,9 +50,10 @@ export class StudentGradesOfSubjectComponent implements OnInit {
     this.studentId = this.route.snapshot.paramMap.get('studentId');
     // this.gradesService.getgetGradesValueBySubjaectIdAndStudentId(this.subjectId, this.studentId).subscribe(data => this.grades = data);
     this.gradesService.getgetGradesBySubjaectIdAndStudentIdTeacherView(this.subjectId, this.studentId)
-    .subscribe(data => {this.grades = data;
-    console.log(this.grades);
-    });
+      .subscribe(data => {
+        this.grades = data;
+        console.log(this.grades);
+      });
 
 
     this.subjectService.getSubjects().subscribe(data => this.subjects = data);
@@ -67,7 +68,7 @@ export class StudentGradesOfSubjectComponent implements OnInit {
     //this.grades[id_grade - 1] = null;
     this.grades = this.grades.filter(item => item.id != id_grade);
     this.gradesService.getgetGradesBySubjaectIdAndStudentId(this.subjectId, this.studentId)
-    .subscribe(data => this.grades = data);
+      .subscribe(data => this.grades = data);
     this.ngOnInit();
     console.log(id_grade);
   }
@@ -78,12 +79,13 @@ export class StudentGradesOfSubjectComponent implements OnInit {
     this.gradeToSend.studentId = parseInt(this.studentId, 10);
     this.gradeToSend.date_received = new Date().toISOString();
     this.gradeToSend.teacherId = parseInt(sessionStorage.getItem('userId'), 10);
-     // na becku zamieni id usera na id teachera, innaczje nie moge zrobic - do sprawdzenia
+    // na becku zamieni id usera na id teachera, innaczje nie moge zrobic - do sprawdzenia
     // id na becku
     console.log('gradeTosend');
     //console.log(this.gradeToSend.value_grade);
     console.log(this.gradeToSend);
-    this.gradesService.addNewGrade(this.gradeToSend).subscribe();
-    this.ngOnInit();
+    this.gradesService.addNewGrade(this.gradeToSend).subscribe(() => {
+      this.ngOnInit();
+    });
   }
 }

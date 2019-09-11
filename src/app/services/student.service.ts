@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Groups } from '../models/Groups';
 import { environment } from '../../environments/environment';
 import { Students } from '../models/students';
+import {Grade} from '../models/Grade';
 
 @Injectable({
   providedIn: 'root'
@@ -25,9 +26,10 @@ export class StudentService {
     return this.http.get<number>(`${environment.backendUrl}/api/student/studentidbyuserid/${userId}`);
   }
 
-  getStudentByStudentId(studentId: number): Observable<Students> {
+
+  getStudentByStudentId(studentId: string): Observable<Students> {
     // to do
-    return this.http.get<Students>(`${environment.backendUrl}/api/student/studentbystudentid/${studentId}`);
+    return this.http.get<Students>(`${environment.backendUrl}/api/student/${studentId}`);
   }
 
   getStudentByUserId(userId: string): Observable<Students> {
@@ -39,5 +41,10 @@ export class StudentService {
     console.log(student);
     // http://localhost:8081/api/student/add
     return this.http.put<Object>('http://localhost:8081/api/student/add', student);
+  }
+
+  updateStudentGroup(id: number, selectedValue: number) {
+    return this.http.post(`${environment.backendUrl}/api/student/${id}/setGroup/${selectedValue}`, null);
+    console.log('tu');
   }
 }

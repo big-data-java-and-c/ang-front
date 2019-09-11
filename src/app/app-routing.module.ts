@@ -10,6 +10,7 @@ import { StudentsSubjectsListComponent } from './components/students-subjects-li
 import { StudentGradesOfSubjectComponent } from './components/student-grades-of-subject/student-grades-of-subject.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { StudentsListComponent } from './components/students-list/students-list.component';
+import {UpdateStudentGroupComponent} from './components/update-student-group/update-student-group.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'groupsList/group/:id/studentSubjects/:studentId/ofSubject/:subjectId', component: StudentGradesOfSubjectComponent },
   { path: 'user-form', component: UserFormComponent },
   { path: 'students-list', component: StudentsListComponent },
+  { path: 'update-student-group/:studentId', component: UpdateStudentGroupComponent},
 
 ];
 

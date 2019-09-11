@@ -1,0 +1,16 @@
+<h1>Nazwa studenta : {{student.displayName}}</h1>
+<h2>Grupa : {{student.group.groupName}}</h2>
+  <mat-form-field>
+    <mat-select [(ngModel)]="selectedValue" name="food" [(value)]="selected">
+      <mat-option [value]="1">IO1</mat-option>
+      <mat-option [value]="2">IO2</mat-option>
+      <mat-option [value]="3">IO3</mat-option>
+      <mat-option [value]="4">IO4</mat-option>
+      <mat-option [value]="5">IO5</mat-option>
+      <mat-option [value]="6">IO6</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+<button mat-button color="primary" (click)="saveGroup(student.id)">Zapisz</button>
+

@@ -28,9 +28,10 @@ export class AppComponent {
   }
 
   logout() {
-    this.router.navigate(['/']);
     sessionStorage.clear();
-    location.reload();
+    // location.reload();
+    this.router.navigate(['login']);
+
   }
 
 }
