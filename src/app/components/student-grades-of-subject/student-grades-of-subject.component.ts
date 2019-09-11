@@ -68,7 +68,8 @@ export class StudentGradesOfSubjectComponent implements OnInit {
     //this.grades[id_grade - 1] = null;
     this.grades = this.grades.filter(item => item.id != id_grade);
     this.gradesService.getgetGradesBySubjaectIdAndStudentId(this.subjectId, this.studentId)
-      .subscribe(data => this.grades = data);
+      .subscribe(data => {this.grades = data, this.ngOnInit(); }
+    );
     this.ngOnInit();
     console.log(id_grade);
   }
